@@ -4,10 +4,10 @@
  *
  * @category Mongologue
  * @package  Core
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  NONE http://github.com/suyati/mongologue
  * @version  0.1.1
- * @link     http://github.com/biswojit19/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 namespace Mongologue;
 
@@ -16,10 +16,10 @@ namespace Mongologue;
  *
  * @category Mongologue
  * @package  Core
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  NONE http://github.com/suyati/mongologue
  * @version  0.1.1
- * @link     http://github.com/biswojit19/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 class Config
 {

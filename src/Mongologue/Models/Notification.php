@@ -4,9 +4,9 @@
  *
  * @category Mongologue
  * @package  Models
- * author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @tkannippoyil <tkannippoyil@suyati.com>
+ * @license  none http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 namespace Mongologue\Models;
 
@@ -18,9 +18,9 @@ use \Mongologue\Exception;
  *
  * @category Mongologue
  * @package  Models
- * author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @tkannippoyil <tkannippoyil@suyati.com>
+ * @license  none http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 class Notification extends Model
 {

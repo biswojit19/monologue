@@ -4,9 +4,9 @@
  *
  * @category Mongologue
  * @package  Mongologue
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  none http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 namespace Mongologue;
 
@@ -19,9 +19,9 @@ use \Mongologue\Core\Collections;
  *
  * @category Mongologue
  * @package  Mongologue
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  none http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 class Factory
 {

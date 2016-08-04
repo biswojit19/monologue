@@ -4,9 +4,9 @@
  *
  * @category Mongologue
  * @package  Collection
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  none http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 namespace Mongologue\Collection;
 
@@ -20,11 +20,11 @@ use \Mongologue\Models\Message;
  *
  * @category Mongologue
  * @package  Collection
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  none http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
-
+const S3PATH = "https://s3-ap-southeast-2.amazonaws.com/quack-prod-w/"; 
 class Inbox implements Collection
 {
     private $_collection;
@@ -215,16 +215,16 @@ class Inbox implements Collection
         if ($limit) {
             $cursor->limit((int)$limit);
         }
-
+		//var_dump($cursor); die;
         $response = array();
 
         foreach ($cursor as $post) {
 			//var_dump($post['files'][0]); die;
-			if($post['anonymous'] == 1){
-				$post['user']['pic'] = S3PATH."uploads/images/def_image_user.jpg";
+			if(empty($post['anonymous']) || $post['anonymous'] == 1){
+				$post['user']['pic'] = PATH."uploads/images/def_image_user.jpg";
 			}
 			if(!empty($post['files'][0])){
-				$post['files'][0] = S3PATH."uploads/post/".$post['post']."/".$post['files'][0];
+				$post['files'][0] = S3PATH."post/".$post['post']."/".$post['files'][0];
 			}
             $response[] = $post;
         }
@@ -262,12 +262,40 @@ class Inbox implements Collection
     {
         return call_user_func_array(array($this, $callable), $params);
     }
-	
 	public function update($postId , array $myActions)
     {
-		$response = $this->_collection->update(array("post" => $postId),
-			array('$set' => array('likes1' => $myActions['likesCount'],'comments' => $myActions['commentsCount'])),
+		if(!empty($myActions["viewed"])){
+			$response = $this->_collection->update(array("post" => $postId,"to" => $myActions["userId"]),
+				array('$set' => array('viewed' => true)),
+				array("upsert" => true)
+			);
+			var_dump($this->_collection->findOne(array("post" => $postId,"to" => $myActions["userId"])));die;
+			//print_r(array("post" => $postId,"to" => $myActions["userId"])); die;
+		}else{
+			$response = $this->_collection->update(array("post" => $postId),
+			array('$set' => array('likes' => $myActions['likesCount'],'comments' => $myActions['commentsCount'])),
 			array("multiple" => true)
 		);
+		}
+		
     }
+	public function like($postId , $likedUserId)
+    {
+		/*
+		$response = $this->_collection->update(array("post" => $postId,"to" =>$likedUserId),
+			array('$set' => array('liked' => true)),
+			array("multiple" => true)
+		);
+		*/
+    }
+	public function comment($postId , $likedUserId)
+    {
+		/*
+		$response = $this->_collection->update(array("post" => $postId,"to" =>$likedUserId),
+			array('$set' => array('commented' => true)),
+			array("multiple" => true)
+		);
+		*/
+    }
+	
 }

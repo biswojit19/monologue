@@ -4,10 +4,10 @@
  *
  * @category Mongologue
  * @package  Exceptions
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @author   @nmohanan <nmohanan@suyati.com>
+ * @license  NONE http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 namespace Mongologue\Exceptions\User;
 
@@ -16,9 +16,9 @@ namespace Mongologue\Exceptions\User;
  *
  * @category Mongologue
  * @package  Exceptions
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  NONE http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 class BlockerNotFoundException extends \Exception
 {

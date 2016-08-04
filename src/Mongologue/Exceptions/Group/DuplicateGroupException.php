@@ -4,10 +4,10 @@
  *
  * @category Mongologue
  * @package  Exceptions
- * @author   @biswojit19 <biswojit.m@wattabyte.com> 
- * author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com> 
+ * @author   @naveenbos <nmohanan@suyati.com>
+ * @license  NONE http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 namespace Mongologue\Exceptions\Group;
 
@@ -16,10 +16,10 @@ namespace Mongologue\Exceptions\Group;
  *
  * @category Mongologue
  * @package  Exceptions
- * @author   @biswojit19 <biswojit.m@wattabyte.com> 
- * author   @biswojit19 <biswojit.m@wattabyte.com>
- * @license  none http://github.com/biswojit19/monologue
- * @link     http://github.com/biswojit19/mongologue
+ * @author   @kpnunni <krishnanunni@suyati.com> 
+ * @author   @naveenbos <nmohanan@suyati.com>
+ * @license  NONE http://github.com/suyati/mongologue
+ * @link     http://github.com/suyati/mongologue
  */
 class DuplicateGroupException extends \Exception
 {

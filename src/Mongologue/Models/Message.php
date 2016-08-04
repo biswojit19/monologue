@@ -4,8 +4,8 @@
  *
  * @category Mongologue
  * @package  Models
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
-
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  none http://suyati.com
  * @link     http://github.com/xait/docxwriter
  */
 namespace Mongologue\Models;
@@ -17,8 +17,8 @@ use Mongologue\Interfaces\Model;
  *
  * @category Mongologue
  * @package  Models
- * @author   @biswojit19 <biswojit.m@wattabyte.com>
-
+ * @author   @kpnunni <krishnanunni@suyati.com>
+ * @license  none http://suyati.com
  * @link     http://github.com/xait/docxwriter
  */
 class Message extends Model
@@ -34,6 +34,7 @@ class Message extends Model
     protected $type;
     protected $comments;
     protected $category;
+	protected $viewed;
     protected $files = array();
     protected $sent;
     protected $data = array();
@@ -61,7 +62,8 @@ class Message extends Model
         
         $document["likes"]          = count($document["likes"]);
         $document["comments"]       = count($document["comments"]);
-
+		$document["liked"]          = false;
+        $document["viewed"]         = false; 
         if ($category) {
             $document["category"]   = $category->document();
         }
