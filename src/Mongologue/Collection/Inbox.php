@@ -220,7 +220,7 @@ class Inbox implements Collection
 
         foreach ($cursor as $post) {
 			//var_dump($post['files'][0]); die;
-			if(empty($post['anonymous']) || $post['anonymous'] == 1){
+			if( $post['anonymous'] == 1){
 				$post['user']['pic'] = PATH."uploads/images/def_image_user.jpg";
 			}
 			if(!empty($post['files'][0])){
