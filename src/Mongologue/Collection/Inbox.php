@@ -25,7 +25,7 @@ use \Mongologue\Models\Message;
  * @link     http://github.com/suyati/mongologue
  */
 const S3PATH = "https://s3-ap-southeast-2.amazonaws.com/quack-prod-w/"; 
-class Inbox implements Collection
+class Inbox implements Collection   
 {
     private $_collection;
     private $_collections;
