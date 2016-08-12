@@ -143,6 +143,23 @@ class Post implements Collection
         return true;
     }
 
+	/**
+     * Remove Message by Sender from Inbox
+     * 
+     * @param mixed $to   Id of recipient
+     * @param mixed $from Id of sender
+     * 
+     * @return void
+     */
+    public function removeMessage($postId)
+    {
+		//echo $postId; die;
+        $query = array("id"=>(int)$postId);
+        $this->_collection->remove($query);
+        return true;
+    }
+
+	
     /**
      * Find a Post
      * 

@@ -189,6 +189,21 @@ class Inbox implements Collection
         $this->_collection->remove($query);
         return true;
     }
+	/**
+     * Remove Message by Sender from Inbox
+     * 
+     * @param mixed $to   Id of recipient
+     * @param mixed $from Id of sender
+     * 
+     * @return void
+     */
+    public function removeMessage($postId)
+    {
+		//echo $postId; die;
+        $query = array("post"=>(int)$postId);
+        $this->_collection->remove($query);
+        return true;
+    }
 
 
     /**
@@ -281,21 +296,21 @@ class Inbox implements Collection
     }
 	public function like($postId , $likedUserId)
     {
-		/*
+		
 		$response = $this->_collection->update(array("post" => $postId,"to" =>$likedUserId),
 			array('$set' => array('liked' => true)),
 			array("multiple" => true)
 		);
-		*/
+		
     }
 	public function comment($postId , $likedUserId)
     {
-		/*
+		
 		$response = $this->_collection->update(array("post" => $postId,"to" =>$likedUserId),
 			array('$set' => array('commented' => true)),
 			array("multiple" => true)
 		);
-		*/
+		
     }
 	
 }
