@@ -151,7 +151,7 @@ class Post implements Collection
      * 
      * @return void
      */
-    public function removeMessage($postId,$commentId)
+    public function removeMessage($commentId)
     {
 		//echo $postId; die;
         $query = array("id"=>(int)$commentId);
